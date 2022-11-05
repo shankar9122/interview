@@ -10,42 +10,42 @@
 
 <body>
     <script>
-        let portfolio=[
-                {name:"Mark", stock:"FB"},
-                {name:"Steve", stock:"APPL"},
-                {name:"Tim", stock:"APPL"},
-                {name:"Steve", stock:"MSFT"},
-                {name:"Bill", stock:"MSFT"},
-                {name:"Bill", stock:"APPL"},
-                ];
+//         let portfolio=[
+//                 {name:"Mark", stock:"FB"},
+//                 {name:"Steve", stock:"APPL"},
+//                 {name:"Tim", stock:"APPL"},
+//                 {name:"Steve", stock:"MSFT"},
+//                 {name:"Bill", stock:"MSFT"},
+//                 {name:"Bill", stock:"APPL"},
+//                 ];
 
-                /* Output =[
-                {stock:"APPL", name:["Steve", "Tim", "Bill"]},
-                {stock:"MSFT", name:["Steve", "Bill"]},
-                {stock:"FB", name:["Mark"]},
-                ] */
-
-
-                let keyVal={};
-                  let output=[];
-
-                const getStocks = (data) => {
-                    for(let i=0; i<data.length; i++){
-                    if(keyVal[data[i].stock]){
-                        keyVal[data[i].stock].push(data[i].name)
-                    } else{
-                        keyVal[data[i].stock] = [data[i].name]
-                    }
-                  }
-
-                  for(key in keyVal){
-                  output.push({stock:key, name:keyVal[key]})
-                  }
-                }
-                getStocks(portfolio);
+//                 /* Output =[
+//                 {stock:"APPL", name:["Steve", "Tim", "Bill"]},
+//                 {stock:"MSFT", name:["Steve", "Bill"]},
+//                 {stock:"FB", name:["Mark"]},
+//                 ] */
 
 
-                  console.log(output)
+//                 let keyVal={};
+//                   let output=[];
+
+//                 const getStocks = (data) => {
+//                     for(let i=0; i<data.length; i++){
+//                     if(keyVal[data[i].stock]){
+//                         keyVal[data[i].stock].push(data[i].name)
+//                     } else{
+//                         keyVal[data[i].stock] = [data[i].name]
+//                     }
+//                   }
+
+//                   for(key in keyVal){
+//                   output.push({stock:key, name:keyVal[key]})
+//                   }
+//                 }
+//                 getStocks(portfolio);
+
+
+//                   console.log(output)
 
         
         
