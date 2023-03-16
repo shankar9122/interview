@@ -25,6 +25,25 @@
 //             return output;
 //         }
 //         console.log(getUnique(data))
+
+
+const getUnique = (arr) => {
+  const freq = {};
+  arr.forEach((item) => {
+    freq[item] = (freq[item] || 0) + 1;
+  });
+  const output = [];
+  Object.keys(freq).forEach((key) => {
+    if (freq[key] === 1) {
+      output.push(parseInt(key));
+    }
+  });
+  return output;
+};
+
+const data = [1, 2, 4, 2, 5, 1, 8, 5];
+console.log(getUnique(data)); // Output: [4, 8]
+
         
         
         //--------------------------------------------------------------
