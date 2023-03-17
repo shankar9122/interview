@@ -10,6 +10,28 @@
 
 <body>
     <script>
+        
+        // Kth smallest element-------------------------------------------
+        //Example 1:
+
+        //Input:
+        let A = [7, 10, 4, 20, 15]
+        let K = 4;
+        // Output : 15
+
+        function findKthElement (arr, k){
+          arr.sort((a, b) => a-b);
+          return arr[k-1]
+        }
+        console.log(findKthElement(A, K))
+
+        
+        
+        
+        
+        
+        
+        
 //         get unique value from array--------------------------------------------
         
 //         let data = [1,2,4,2,5,1,8,5];
