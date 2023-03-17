@@ -10,6 +10,30 @@
 
 <body>
     <script>
+        
+        // Missing number in array----------------------------
+        //Example 1:
+
+        //Input:
+        let N = 5
+        let A = [1,2,3,5]
+        //Output: 4
+
+        function findMissingNum (arr, n){
+             let sum=0;
+           for(let i=0; i<arr.length; i++){
+            sum+=arr[i]
+           }
+           let expectedSum=(n*(n+1))/2;
+           let missingNum= expectedSum-sum;
+           return missingNum
+        }
+
+        console.log(findMissingNum(A,N))
+        
+        
+        
+        
 //         get unique value from array--------------------------------------------
         
 //         let data = [1,2,4,2,5,1,8,5];
