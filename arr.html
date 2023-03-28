@@ -11,6 +11,7 @@
 <body>
     <script>
         
+
         // Missing number in array----------------------------
         //Example 1:
 
@@ -30,6 +31,48 @@
         }
 
         console.log(findMissingNum(A,N))
+
+
+        // Kth smallest element-------------------------------------------
+        //Example 1:
+
+        //Input:
+        let A = [7, 10, 4, 20, 15]
+        let K = 4;
+        // Output : 15
+
+        function findKthElement (arr, k){
+          arr.sort((a, b) => a-b);
+          return arr[k-1]
+        }
+        console.log(findKthElement(A, K))
+
+        // Second Largest ----------------------------------------------------
+        let data=[12, 35, 1, 10, 34, 1];
+        /* [10, 5, 10] 
+        Output: 5
+        */
+
+        function findSecondLarget(arr){
+            let largest=arr[0];
+          let secondLargest=0;
+
+          for(let i=1; i<arr.length; i++){
+            if(arr[i] > largest){
+                secondLargest=largest;
+              largest=arr[i]
+            } else if(arr[i] > secondLargest && arr[i] !== largest){
+                secondLargest=arr[i]
+            }
+          }
+
+          return secondLargest;
+
+        }
+        console.log(findSecondLarget(data))
+
+
+      
         
         
         
