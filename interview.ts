@@ -366,16 +366,15 @@ moveZeros([1, 2, 3]);
 // An array contains distinct numbers from 0 to n, with exactly one number missing. Find the missing number.
 
 function missingNumber(arr) {
-    let n = arr.length;
-    let missingNum = n * (n + 1) / 2;
+  const n = arr.length;
+  const expectedSum = (n * (n + 1)) / 2;
 
-    let sum = 0;
+  let actualSum = 0;
+  for (const num of arr) {
+    actualSum += num;
+  }
 
-    for (let i = 0; i < n; i++) {
-        sum += arr[i];
-    }
-
-    return missingNum - sum;
+  return expectedSum - actualSum;
 }
 
 // Examples:
