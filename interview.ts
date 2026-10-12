@@ -402,14 +402,29 @@ missingNumber([0]);          // 1
 
 // Write a function isAnagram(s, t) that returns true if both strings contain the same characters with the same frequencies; otherwise, return false.
 
-// Examples:
+function isAnagram(s, t) {
+  if (s.length !== t.length) return false;
 
-isAnagram("listen", "silent"); // true
-isAnagram("hello", "bello");   // false
-isAnagram("anagram", "nagaram"); // true
-isAnagram("rat", "car");       // false
-isAnagram("", "");             // true
+  const counts = new Map();
 
+  for (const char of s) {
+    counts.set(char, (counts.get(char) ?? 0) + 1);
+  }
+
+  for (const char of t) {
+    const count = counts.get(char);
+    if (!count) return false;        // missing ya already 0 ho chuka
+    counts.set(char, count - 1);
+  }
+
+  return true;
+}
+
+console.log(isAnagram("listen", "silent"));   // true
+console.log(isAnagram("hello", "bello"));     // false
+console.log(isAnagram("anagram", "nagaram")); // true
+console.log(isAnagram("rat", "car"));         // false
+console.log(isAnagram("", ""));               // true
 // Requirements:
 
 // Assume inputs contain lowercase English letters (a–z).
@@ -421,3 +436,41 @@ isAnagram("", "");             // true
 // Aim for O(n) time.
 
 // Try to achieve O(1) auxiliary space using the fixed character set of 26 letters.
+
+
+
+
+
+
+
+// Level 2 — Question 1: Closures
+// Step 1: Predict the output
+
+// Bhai, ye code dekho:
+
+function createCounter() {
+    let count = 0;
+
+    return function () {
+        count++;
+        return count;
+    };
+}
+
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+console.log(counter1());
+console.log(counter1());
+console.log(counter2());
+console.log(counter1());
+console.log(counter2());
+
+
+// The output is `1, 2, 1, 3, 2`.
+
+// Each call to `createCounter()` creates a separate lexical environment with its own `count` variable. The returned function forms a closure over that environment and can 
+// continue accessing and updating `count` even after `createCounter()` has finished executing.
+
+// Therefore, `counter1` and `counter2` maintain independent state. Calling `counter1()`
+//  doesn't change the count maintained by `counter2`.
