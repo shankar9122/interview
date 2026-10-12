@@ -365,6 +365,19 @@ moveZeros([1, 2, 3]);
 
 // An array contains distinct numbers from 0 to n, with exactly one number missing. Find the missing number.
 
+function missingNumber(arr) {
+    let n = arr.length;
+    let missingNum = n * (n + 1) / 2;
+
+    let sum = 0;
+
+    for (let i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+
+    return missingNum - sum;
+}
+
 // Examples:
 
 missingNumber([3, 0, 1]);    // 2
@@ -381,3 +394,31 @@ missingNumber([0]);          // 1
 // Aim for O(n) time and O(1) auxiliary space.
 
 // Don't sort the array.
+
+
+
+// Level 1 — Question 10: Valid Anagram
+
+// Bhai, ab strings aur frequency counting combine karte hain.
+
+// Write a function isAnagram(s, t) that returns true if both strings contain the same characters with the same frequencies; otherwise, return false.
+
+// Examples:
+
+isAnagram("listen", "silent"); // true
+isAnagram("hello", "bello");   // false
+isAnagram("anagram", "nagaram"); // true
+isAnagram("rat", "car");       // false
+isAnagram("", "");             // true
+
+// Requirements:
+
+// Assume inputs contain lowercase English letters (a–z).
+
+// Character order doesn't matter.
+
+// Character frequency must match exactly.
+
+// Aim for O(n) time.
+
+// Try to achieve O(1) auxiliary space using the fixed character set of 26 letters.
